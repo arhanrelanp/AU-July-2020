@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function RegExpCheck() {
+                rexp = new RegExp('^[hdn]ot.*[hdn]o+t$');
+                
+                if(rexp.test(document.getElementById("inp").value))
+                {
+                    document.getElementById("output").value="true";
+                }
+                else
+                {
+                    document.getElementById("output").value="false";
+                }
+        
+        }
+        function arrManip() {
+            
+            var arr=[2,43,0,13,44,78,3,56,-32,9,77];
+            //document.getElementById("init").value=arr.toString();
+            
+            var s_arr=arr.sort((a,b)=>{return a-b});
+            document.getElementById("o1").value=s_arr.toString();
+            
+            var f_arr=s_arr.filter((val)=> val>10);
+                                    
+            document.getElementById("o2").value=f_arr.toString();
+    
+            var inc_arr=f_arr.map((item)=>{return ++item;});
+    
+            document.getElementById("o3").value=inc_arr.toString();
+            
+            document.getElementById("o4").value=inc_arr.splice(0,4).toString();
+            
+            }
+    </script>
+    <!--Regular expression-->
+    <h3>Enter the string for regular expression</h3>
+    <input id="inp" type="text">
+    <button onclick="RegExpCheck()" id="match" type="button">Match!</button>
+    <h4>Output</h4>
+    <textarea id="output"></textarea>
+    
+    <!-- Array Operations -->
+    <h4>Given Hardcoded Array</h4>
+    <input id="init" type="text" value="2,43,0,13,44,78,3,56,-32,9,77">
+    
+    <button onclick="arrManip()" id="arrayman" type="button">Array Manipulation</button>
+    <h4>Sorted Array</h4>
+    <textarea id="o1"></textarea>
+    <h4>Array after filtering only the values which are greater than 10</h4>
+    <textarea id="o2"></textarea>
+    <h4>Array after adding 1 to each element</h4>
+    <textarea id="o3"></textarea>
+    <h4>Elements 1-4 (array indexes 0 to 3) </h4>
+    <textarea id="o4"></textarea>
+           
+    
+    
+</body>
+</html>
