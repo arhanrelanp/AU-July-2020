@@ -1,0 +1,31 @@
+TASK 1: Find all hotels with ratings for Cleanliness>=4
+Average Reviews
+SELECT ARRAY_AVG(reviews[*].ratings[*].Cleanliness),
+       name
+FROM `travel-sample`
+WHERE type="hotel"
+    AND ARRAY_AVG(reviews[*].ratings[*].Cleanliness) >=4;
+
+ 
+TASK 2: Find the highest airport in each country.
+SELECT a.country,
+       a.airportname,
+       a.alt AS max_alt
+FROM (
+    SELECT country,
+           airportname,
+           geo.alt AS alt,
+           ROW_NUMBER() OVER (
+               PARTITION BY country
+               ORDER BY geo.alt DESC) rank
+    FROM `travel-sample`) AS a
+WHERE a.rank = 1;
+ 
+TASK 3: Find all routes operated by Air France from the city of Marseille. (use field faa)
+SELECT airline.name as `Airline_Name`, route.sourceairport as `Source_Airport`, route.destinationairport as `Destination_Airport`, route.airline as `Airline`
+FROM `travel-sample` route
+  JOIN `travel-sample` airline
+  ON KEYS route.airlineid
+WHERE route.type = "route" and airline.name= "Air France"
+AND airline.type = "airline"
+AND route.sourceairport = "MRS"
