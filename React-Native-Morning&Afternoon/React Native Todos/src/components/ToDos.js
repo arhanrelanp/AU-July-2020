@@ -91,7 +91,7 @@ export default function ToDos({navigation}) {
     const logout = async () => {
         const userName = await AsyncStorage.getItem("username");
         console.log(userName);
-        AsyncStorage.removeItem(userName);
+        await AsyncStorage.clear();
         navigation.navigate("Login");
     }
 
