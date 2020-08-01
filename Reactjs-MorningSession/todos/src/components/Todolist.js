@@ -13,7 +13,7 @@ const Todolist =(props)=>{
 
       return (
             <div className="todolist" style={{width:"60%", justifyContent:"center"}}>   
-            <h5>Todo Item</h5>         
+            <h5>Todos</h5>         
                   <div className="" style={{width:"100%"}} >                     
                   <Suspense fallback={<div>Loading...</div>}>
                    {props.items.map((item,key)=><Todo text={item} key={key} keyId={key} load={props.load}/> )}
