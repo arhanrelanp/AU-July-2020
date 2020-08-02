@@ -21,7 +21,6 @@ class BlockingQueue
     // inserting into queue
     static boolean put()
     {
-        // insert only when number of element is not greater than max size
         if(queue.size() <= limit)
         {
             System.out.println("Inserting "+(value++) +" in queue at "+queue.size());
