@@ -1,0 +1,40 @@
+
+Join of Employee Table and Dept Table
+
+Employee ID: 1 Employee Name:Arhan Relan  Department Name: Consult
+Employee ID: 2 Employee Name:Priyank Ahuja  Department Name: Manage
+
+Employee Table
+
+Employee ID: 1 Employee Name:Arhan Relan Department ID: 1
+Employee ID: 2 Employee Name:Priyank Ahuja Department ID: 2
+
+Enter Employee ID of the record to be deleted:
+2
+
+Data Deleted Successfully
+
+
+Employee Table
+
+Employee ID: 1 Employee Name:Arhan Relan Department ID: 1
+Department Table
+
+Department ID: 1 Department Name:Consult
+Department ID: 2 Department Name:Manage
+Department ID: 3 Department Name:HR
+Department ID: 4 Department Name:IT
+
+Enter new Department ID :
+5
+
+Enter new Department Name:
+Sales
+
+Data Successfully Added
+
+Department ID: 1 Department Name:Consult
+Department ID: 2 Department Name:Manage
+Department ID: 3 Department Name:HR
+Department ID: 4 Department Name:IT
+Department ID: 5 Department Name:Sales
