@@ -19,7 +19,7 @@ namespace DelegatesEventHandlers
             string a = Console.ReadLine();
             Console.WriteLine("String 2: ");
             string b = Console.ReadLine();
-            Console.WriteLine(a + "" + b);
+            Console.WriteLine(a + " " + b);
             Console.WriteLine("Length: " + c(a, b));
 
         }
