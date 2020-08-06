@@ -1,68 +1,52 @@
 ﻿using System;
 
+
 namespace DelegatesEventHandlers
 {
-    public class Leaves
+    class Multicast
     {
-        public delegate void Notify();
-        public event Notify ProcessCompleted;
-        public int NoOfLeaves;
-        public int AvailLeaves;
-
-        public Leaves(int lr, int la)
+        public delegate void Concat(string s1, string s2);
+        private string result;
+        public Multicast()
         {
-            NoOfLeaves = lr;
-            AvailLeaves = la;
+            result = "";
         }
-
-
-        public void verify()
+        public void f1(string s1,string s2)
         {
-            Console.WriteLine("Leave application process Started!");
-            if (AvailLeaves >= NoOfLeaves)
-            {
-                ProcessCompleted?.Invoke();
-            }
+            if (s1.Length > s2.Length)
+                result = result + s1;
             else
-            {
-                Console.WriteLine("Leaves not available.");
-            }
+                result = result + s2;
         }
+        public void f2(string s1, string s2)
+        {
+            if (s1.Length > s2.Length)
+                result = result + s1;
+            else
+                result = result + s2;
+        }
+        public void StrConcat()
+        {
+            string a, b;
+            Concat c;
+            c = f1;
+            c += f2;
+            Console.WriteLine("String 1: ");
+            a = Console.ReadLine();
+            Console.WriteLine("String 2: ");
+            b = Console.ReadLine();
+            c(a, b);
+            Console.WriteLine("Value of concatenated longer string is: " + result);
 
-
-
+        }
     }
-    public class Program
+    class Program
     {
-        public static void Main()
+     
+        static void Main(string[] args)
         {
-            Console.WriteLine("Enter Number of leaves required .");
-            int lr = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Number of available leaves .");
-            int la = Convert.ToInt32(Console.ReadLine());
-
-            Leaves appln = new Leaves(lr, la);
-            //Registered with an event
-            appln.ProcessCompleted += appln_ProcessCompleted;
-            appln.verify();
-        }
-        public static void appln_ProcessCompleted()
-        {
-            Console.WriteLine("Confirm please(Y/N)");
-            String resp = Console.ReadLine();
-            if (resp.Equals("Y") || resp.Equals("y"))
-            {
-                Console.WriteLine("Applied for leave successfully!!");
-            }
-            else
-            {
-                Console.WriteLine("Leave application cancelled! Apply for a shorter leave!");
-            }
-            Console.ReadLine();
+            Multicast m = new Multicast();
+            m.StrConcat();
         }
     }
 }
-
-
-
-
