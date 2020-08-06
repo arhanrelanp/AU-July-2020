@@ -1,26 +1,50 @@
-﻿using System;
+using System;
 
 
 namespace DelegatesEventHandlers
 {
     
-    class Program
+    class Multicast
     {
-        public delegate int count(string s1, string s2);
-        public static int countChars(string s1, string s2)
+        public delegate void concat(string s1, string s2);
+        private string property;
+        public void f1(string s1, string s2)
         {
-            string res = s1 + s2;
-            return res.Length;
+            if (s1.Length > s2.Length)
+                property = property + s1;
+            else
+                property = property + s2;
         }
-        static void Main(string[] args)
+        public void f2(string s1, string s2)
         {
-            count c = new count(countChars);
+            if (s1.Length > s2.Length)
+                property = property + s1;
+            else
+                property = property + s2;
+        }
+        public void strconcat()
+        {
+            concat c;
+            c = f1;
+            c += f2;
+
             Console.WriteLine("String 1: ");
             string a = Console.ReadLine();
             Console.WriteLine("String 2: ");
             string b = Console.ReadLine();
-            Console.WriteLine(a + "" + b);
-            Console.WriteLine("Length: " + c(a, b));
+            c(a, b);
+            Console.WriteLine("Value of concatenated longer string is: " + property);
+        }
+
+    }
+    class Program
+    {
+ 
+        public static void Main(string[] args)
+        {
+
+            Multicast m = new Multicast();
+            m.strconcat();
 
         }
     }
