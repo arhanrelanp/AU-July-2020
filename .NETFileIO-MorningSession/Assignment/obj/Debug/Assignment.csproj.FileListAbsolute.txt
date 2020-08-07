@@ -1,0 +1,6 @@
+C:\Users\Stuti\source\repos\Assignment\Assignment\bin\Debug\Assignment.exe.config
+C:\Users\Stuti\source\repos\Assignment\Assignment\bin\Debug\Assignment.exe
+C:\Users\Stuti\source\repos\Assignment\Assignment\bin\Debug\Assignment.pdb
+C:\Users\Stuti\source\repos\Assignment\Assignment\obj\Debug\Assignment.csproj.CoreCompileInputs.cache
+C:\Users\Stuti\source\repos\Assignment\Assignment\obj\Debug\Assignment.exe
+C:\Users\Stuti\source\repos\Assignment\Assignment\obj\Debug\Assignment.pdb

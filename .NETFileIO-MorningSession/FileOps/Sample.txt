@@ -1,0 +1,4 @@
+Hi My name is Arhan Relam
+This is a program to implement FileIO operations
+This is a sample text file
+Now this would be transferred reverse line by line.
